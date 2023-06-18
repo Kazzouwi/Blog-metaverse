@@ -8,8 +8,9 @@
         <div class="home-articles">
         {% for article in articles %}
             <div class="home-article">
-                <h3 class="article-title">{{ article.title }}</h3>
-                <p class="article-content">{{ article.content}}</p>
+                <h3 class="home-article-title">{{ article.title }}</h3>
+                <p class="home-article-content">{{ article.content}}</p>
+                <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_show', {'id': article.id}) }}';">Voir l'article</button>
             </div>
         {% endfor %}
         </div>
