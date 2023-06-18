@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="home">
+        <img src="{{ asset('/assets/img/VR.png')}}" alt="vr" class="vr">
+        <h2 class="home-title">Page d'accueil</h1>
+
+        <div class="home-articles">
+        {% for article in articles %}
+            <div class="home-article">
+                <h3 class="article-title">{{ article.title }}</h3>
+                <p class="article-content">{{ article.content}}</p>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+{% endblock body %}

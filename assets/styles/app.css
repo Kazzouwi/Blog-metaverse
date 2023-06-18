@@ -1,0 +1,11 @@
+@import "_header.scss";
+@import "_home.scss";
+
+
+* {
+    color: #2c0047;
+}
+
+body {
+    margin: 0px;
+}
