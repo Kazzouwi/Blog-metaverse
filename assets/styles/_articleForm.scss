@@ -1,0 +1,38 @@
+.article-form-title {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 50px;
+}
+
+.article-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-form form > * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#article_content {
+    height: 200px;
+    width: 350px;
+}
+
+#article_category label {
+    margin-right: 10px;
+}
+
+.back-to-articles {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}

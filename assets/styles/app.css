@@ -2,6 +2,7 @@
 @import "_home.scss";
 @import "_articles.scss";
 @import "_article.scss";
+@import "_articleForm.scss";
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
 
 
@@ -15,10 +16,20 @@ body {
     height: 200vh;
 }
 
-p, button {
+p, button, label, a {
     font-family: 'Montserrat', sans-serif;
 }
 
 h2, h3, h4 {
     font-family: 'Lato', sans-serif;
+}
+
+.main {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    text-align: center;
 }
