@@ -8,7 +8,8 @@
         {% for article in articles %}
             <div class="articles-article">
                 <h3 class="articles-article-title">{{ article.title }}</h3>
-                <p class="articls-article-content">{{ article.content}}</p>
+                <p class="articles-article-content">{{ article.content}}</p>
+                <p class="articles-article-date" >{{ article.date|date('d/m/Y')}}</p>
             </div>
         {% endfor %}
         </div>

@@ -28,6 +28,9 @@ class ArticleController extends AbstractController
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
+        $article->setDate(new \DateTime);
+
+
         if ($form->isSubmitted() && $form->isValid()) {
             $articleRepository->save($article, true);
 

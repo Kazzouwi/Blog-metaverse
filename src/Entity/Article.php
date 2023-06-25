@@ -25,6 +25,9 @@ class Article
     #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'articles')]
     private Collection $category;
 
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date = null;
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
@@ -80,6 +83,18 @@ class Article
     public function removeCategory(Category $category): static
     {
         $this->category->removeElement($category);
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): static
+    {
+        $this->date = $date;
 
         return $this;
     }
