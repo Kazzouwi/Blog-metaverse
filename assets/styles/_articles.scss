@@ -9,3 +9,12 @@
     border-top: solid 2px #2c0047;
     padding: 10px;
 }
+
+.category-list {
+    list-style: none;
+}
+
+.category-list > li {
+    display: inline-block;
+    margin-left: 10px;
+}

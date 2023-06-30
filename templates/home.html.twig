@@ -10,6 +10,12 @@
             <div class="home-article">
                 <h3 class="home-article-title">{{ article.title }}</h3>
                 <p class="home-article-content">{{ article.content}}</p>
+                <ul class="category-list">
+                    {% for category in article.category %}
+                        <li><a href="{{ path('app_category_articleByCategory', {'id': category.id}) }}">{{ category.name }}</a></li>
+                    {% endfor %}
+                </ul>
+                <p class="articles-article-date" >{{ article.date|date('d/m/Y')}}</p>
                 <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_show', {'id': article.id}) }}';">Voir l'article</button>
             </div>
         {% endfor %}

@@ -8,6 +8,12 @@
 
         <div class="article-article">
             <p>{{article.content}}</p>
+            <ul class="category-list">
+                    {% for category in article.category %}
+                        <li><a href="{{ path('app_category_articleByCategory', {'id': category.id}) }}">{{ category.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            <p class="articles-article-date" >{{ article.date|date('d/m/Y')}}</p>
         </div>
     </div>
 {% endblock %}
