@@ -1,6 +1,6 @@
 .vr {
     display: block;
-    width: 300px;
+    width: 15vw;
     transform: translateX(0px);
     animation: float 6s ease-out infinite;
     margin-left: auto;
@@ -12,7 +12,7 @@
         transform: translateY(0px);
     }
     50%{
-        transform: translateY(60px);
+        transform: translateY(3vw);
     }
     100%{
         transform: translateY(0px);
@@ -21,8 +21,7 @@
 
 .home-title {
     text-align: center;
-    font-size: 45px;
-    margin-top: 50px;
+    margin-top: 3vw;
 }
 
 .home-article {
@@ -31,17 +30,15 @@
     padding: 10px;
 }
 
-.home-article-button {
+.home-article-button, .post-button, .save-button {
     border: none;
     background-color: #2c0047;
     color: white;
-    height: 30px;
-    font-size: 1rem;
+    height: 1.5vw;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 3px 3px 6px rgb(73, 73, 73);
+    box-shadow: 0px 0px 6px rgb(73, 73, 73);
 }
-
 
 
 

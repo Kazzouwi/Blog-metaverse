@@ -3,6 +3,7 @@
 {% block body %}
     <div class="main">
         <h2 class="articles-title">Articles :</h1>
+        <button type="button" class="post-button" onclick="window.location.href='{{ path('app_article_new')}}';">Publier</button>
 
         <div class="articles-articles">
         {% for article in articles %}

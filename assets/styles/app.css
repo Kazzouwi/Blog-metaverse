@@ -1,8 +1,10 @@
 @import "_header.scss";
+@import "_footer.scss";
 @import "_home.scss";
 @import "_articles.scss";
 @import "_article.scss";
 @import "_articleForm.scss";
+@import "_categories.scss";
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
 
 
@@ -12,16 +14,28 @@
 
 body {
     margin: 0px;
-    background: radial-gradient(#FFFFFF, #AAAAAA);
-    height: 200vh;
+    background: radial-gradient(#FFFFFF, #999999);
+    height: 100vh;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
 p, button, label, a, li {
     font-family: 'Montserrat', sans-serif;
+    font-size: 1vw;
 }
 
 h2, h3, h4 {
     font-family: 'Lato', sans-serif;
+}
+
+h2 {
+    font-size: 2.5vw;
+}
+
+h3 {
+    font-size: 1.5vw;
 }
 
 .main {
@@ -32,6 +46,12 @@ h2, h3, h4 {
 
 label {
     text-align: center;
+}
+
+@media screen and (max-width: 1026px) {
+    .main {
+        width: 75%;
+    }
 }
 
 

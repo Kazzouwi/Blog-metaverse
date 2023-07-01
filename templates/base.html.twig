@@ -7,17 +7,22 @@
     <title>Blog Metaverse</title>
     {{ encore_entry_link_tags('app') }}
 </head>
-    <header class="header">
+    <div class="header">
         <nav class="header-nav">
             <button class="header-button" onclick="window.location.href='{{path('home')}}'">Accueil</button>
         </nav>
-        <h1 class="title">Blog Innovations</h1>
+        <div class="title-div">
+            <h1 class="title">Blog Innovations</h1>
+        </div>
         <nav class="header-nav">
             <button class="header-button" onclick="window.location.href='{{path('app_article_index')}}'">Articles</button>
             <button class="header-button" onclick="window.location.href='{{path('app_category_index')}}'">Catégories</button>
         </nav>
-    </header>
+    </div>
     <body>
         {% block body %}{% endblock %}
     </body>
+    <div class="footer">
+        <p>Bas de page</p>
+    </div>
 </html>

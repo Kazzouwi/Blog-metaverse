@@ -1,7 +1,6 @@
 .article-form-title {
     text-align: center;
-    font-size: 45px;
-    margin-top: 50px;
+    margin-top: 3vw;
 }
 
 .article-form {
@@ -11,8 +10,8 @@
 }
 
 .article-form form > * {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
 }
 
 form {
@@ -23,12 +22,12 @@ form {
 }
 
 #article_content {
-    height: 200px;
-    width: 350px;
+    height: 15vw;
+    width: 25vw;
 }
 
 #article_category label {
-    margin-right: 10px;
+    margin-right: 0.5vw;
 }
 
 .back-to-articles {
@@ -36,3 +35,29 @@ form {
     justify-content: center;
     margin-top: 15px;
 }
+
+input[type="checkbox"] {
+    appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 0.5vw;
+	border-radius: 3px;
+}
+
+input[type="checkbox"]:active, input[type="checkbox"]:checked:active {
+	background-color: indigo;
+}
+
+input[type="checkbox"]:checked {
+	background-color: indigo;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+#article_category label {
+    position: relative;
+    bottom: 0.4vw;
+}
+
