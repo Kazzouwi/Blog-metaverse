@@ -10,6 +10,11 @@
     <div class="header">
         <nav class="header-nav">
             <button class="header-button" onclick="window.location.href='{{path('home')}}'">Accueil</button>
+            {% if app.user %}
+                <button class="header-button" onclick="window.location.href='{{path('app_logout')}}'">Deconnexion</button>
+            {% else %}
+                <button class="header-button" onclick="window.location.href='{{path('app_login')}}'">Connexion</button>
+            {% endif %}
         </nav>
         <div class="title-div">
             <h1 class="title">Blog Innovations</h1>
@@ -20,9 +25,21 @@
         </nav>
     </div>
     <body>
+        {% if app.user %}
+            <button class="show-profile-button" onclick="window.location.href='{{path('app_user_show', {'id': app.user.id}) }}'">Mon profil</button>
+        {% endif %}
+        
         {% block body %}{% endblock %}
     </body>
     <div class="footer">
-        <p>Bas de page</p>
+        <div class="creator">
+            <p>Créé par : Rémi Dubreucq</p>
+        </div>
+        <div class="social">
+            <a href="https://twitter.com/EcoleStudi" target="_blank"><img src="{{ asset('/assets/img/twitter.png')}}" alt="twitter" class="twitter"></a>
+        </div>
+        <div class="contact">
+            <a href="mailto:remi.dubreucq.code@gmail.com">Remi.Dubreucq.code@gmail.com</a>
+        </div>
     </div>
 </html>

@@ -3,6 +3,10 @@
     margin-top: 50px;
 }
 
+.articles-articles:last-child {
+    margin-bottom: 1vw;
+}
+
 .articles-article {
     background: rgba(0, 0, 0, 0.05);
     border-top: solid 2px #2c0047;
@@ -19,7 +23,7 @@
 }
 
 .post-button {
-    margin-bottom: 15px;
+    margin-bottom: 1vw;
     margin-left: auto;
     margin-right: auto;
 }

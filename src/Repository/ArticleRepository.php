@@ -39,20 +39,6 @@ class ArticleRepository extends ServiceEntityRepository
         }
     }
 
-    public function searchByCategory($id)
-    {
-
-        $queryBuilder = $this->createQueryBuilder('article');
-
-        $query = $queryBuilder
-            ->select('article')
-            ->where('article.category.id LIKE :id')
-            ->setParameter('id', $id)
-            ->getQuery();
-        
-        return $query->getResult();
-    }
-
 //    /**
 //     * @return Article[] Returns an array of Article objects
 //     */

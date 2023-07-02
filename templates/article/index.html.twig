@@ -3,8 +3,10 @@
 {% block body %}
     <div class="main">
         <h2 class="articles-title">Articles :</h1>
+        {% if app.user %}
         <button type="button" class="post-button" onclick="window.location.href='{{ path('app_article_new')}}';">Publier</button>
-
+        {% endif %}
+        
         <div class="articles-articles">
         {% for article in articles %}
             <div class="articles-article">

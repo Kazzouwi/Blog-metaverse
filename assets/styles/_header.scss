@@ -3,8 +3,8 @@
 .header {
     border-bottom: solid 2px #2c0047;
     display: grid;
-    grid-template-columns: 1fr 6fr 2fr;
-    grid-template-rows: 6vw;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-rows: 15vh;
 }
 
 .title {
@@ -12,7 +12,7 @@
     font-family: 'Play', sans-serif;
     font-size: 4vw;
     position: relative;
-    left: 5vw;
+    left: 3vw;
 }
 
 .title-div {
@@ -27,7 +27,7 @@
 }
 
 .header-button {
-    width: 8vw;
+    width: 8.4vw;
     height: 3vw;
     cursor: pointer;
     border: none;
@@ -49,13 +49,13 @@
 
 @media screen and (max-width: 1026px) {
     .header {
-        grid-template-columns: 1fr 5fr 2fr;
+        grid-template-columns: 2fr 5fr 2fr;
     }
 }
 
 @media screen and (max-width: 768px) {
     .header {
-        grid-template-columns: 2fr 8fr 3fr;
+        grid-template-columns: 3fr 8fr 3fr;
     }
 
     .title {

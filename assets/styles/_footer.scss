@@ -1,5 +1,18 @@
 .footer {
     border-top: solid 2px #2c0047;
-    height: 6vw;
     margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 10vh;
+}
+
+.social, .creator, .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.twitter {
+    color : #2c0047;
+    width: 3vw;
 }

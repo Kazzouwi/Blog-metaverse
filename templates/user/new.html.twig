@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+     <div class="main">
+        <h2 class="article-form-title">Inscription</h2>
+
+        <div class="article-form">
+            {{ form_start(form) }}
+                <div "article-form-title-label form-label">
+                    {{ form_label(form.username)}}
+                </div>
+                <div "article-form-title-widget">
+                    {{ form_widget(form.username)}}
+                </div>
+                <div "article-form-content-label form-label">
+                    {{ form_label(form.password)}}
+                </div>
+                <div "article-form-content-widget">
+                    {{ form_widget(form.password)}}
+                </div>
+                <button class="save-button">{{ button_label|default('Sauvegarder') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

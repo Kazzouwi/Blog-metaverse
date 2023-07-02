@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <div class="main">
+        <div class="user-profile">
+            <h2 class="username">{{ user.username }}</h2>
+
+            <div class="articles-articles">
+            {% for article in articles %}
+                <div class="articles-article">
+                    <h3 class="articles-article-title">{{ article.title }}</h3>
+                    <p class="articles-article-content">{{ article.content}}</p>
+                    <ul class="category-list">
+                        {% for category in article.category %}
+                            <li><a href="{{ path('app_category_articleByCategory', {'id': category.id}) }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <p class="articles-article-date" >{{ article.date|date('d/m/Y')}}</p>
+                    <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_show', {'id': article.id}) }}';">Voir l'article</button>
+                </div>
+            {% endfor %}
+            </div>
+    
+            <button type="button" class="edit-redirect-button" onclick="window.location.href='{{ path('app_user_edit', {'id': user.id}) }}'">Modifier</a>
+        </div>
+    </div>
+{% endblock %}

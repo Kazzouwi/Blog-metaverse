@@ -27,18 +27,13 @@
 .home-article {
     background: rgba(0, 0, 0, 0.05);
     border-top: solid 2px #2c0047;
-    padding: 10px;
+    padding: 0.8vw;
 }
 
-.home-article-button, .post-button, .save-button {
-    border: none;
-    background-color: #2c0047;
-    color: white;
-    height: 1.5vw;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0px 0px 6px rgb(73, 73, 73);
+.home-articles:last-child {
+    margin-bottom: 1vw;
 }
+
 
 
 

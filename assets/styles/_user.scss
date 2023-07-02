@@ -1,0 +1,41 @@
+.username {
+    text-align: center;
+}
+
+.edit-redirect-button {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    position: relative;
+    left: 45%;
+}
+
+.article-form-title {
+    text-align: center;
+    margin-top: 3vw;
+}
+
+.user-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-form form > * {
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-user-title {
+    text-align: center;
+}
+
+.user-form-widget, .user-form-label {
+    display: none;
+}
