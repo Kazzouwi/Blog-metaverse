@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Article;
+use App\Model\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -37,6 +38,23 @@ class ArticleRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function findBySearch(SearchData $searchData)
+    {
+        $term = $searchData->q;
+
+        if(!empty($term)) {
+            $articles = $this->createQueryBuilder('a')
+                ->where('a.title LIKE :term')
+                ->orWhere('a.content LIKE :term')
+                ->addOrderBy('a.id', 'DESC')
+                ->setParameter('term', '%'.$term.'%')
+                ->getQuery()
+                ->getResult();
+        }
+
+        return $articles;
     }
 
 //    /**

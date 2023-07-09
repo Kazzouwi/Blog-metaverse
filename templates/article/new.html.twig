@@ -2,6 +2,8 @@
 
 {% block body %}
     <div class="main">
+    {% if app.user %}
+    
         <h2 class="article-form-title">Nouvel Article :</h2>
 
         <div class="article-form">
@@ -24,11 +26,16 @@
                 <div "article-form-category-widget">
                     {{ form_widget(form.category)}}
                 </div>
-                <button class="save-button">{{ button_label|default('Sauvegarder') }}</button>
+                <button class="save-button" id="save-button" type="submit">{{ button_label|default('Sauvegarder') }}</button>
             {{ form_end(form) }}
         </div>
         <div class="back-to-articles">
             <a href="{{ path('app_article_index') }}">Retour aux articles</a>
         </div>
+        {% else %}
+            <h2 class="article-form-title">Vous n'êtes pas connecté(e)</h2>
+        {% endif %}
     </div>
 {% endblock %}
+
+

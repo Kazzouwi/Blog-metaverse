@@ -12,7 +12,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function home(ArticleRepository $articleRepository, CategoryRepository $categoryRepository)
     {
-        $articles = $articleRepository->findBy([], ['id' => 'DESC'], 2);
+        $articles = $articleRepository->findBy([], ['id' => 'DESC'], 5);
         $categories = $categoryRepository->findAll();
 
         return $this->render('home.html.twig', [

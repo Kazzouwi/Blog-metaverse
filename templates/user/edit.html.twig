@@ -4,25 +4,33 @@
 
 {% block body %}
 <div class="main">
-    <h2 class="edit-user-title">Modifier le profil</h2>
-    <div class="user-form">
-            {{ form_start(form) }}
-                <div "user-form-username-label form-label">
-                    {{ form_label(form.username)}}
+    {% if app.user %}
+        {% if app.user.id == user.id %}
+            <h2 class="edit-user-title">Modifier le profil</h2>
+            <div class="user-form">
+                    {{ form_start(form) }}
+                        <div "user-form-username-label form-label">
+                            {{ form_label(form.username)}}
+                        </div>
+                        <div "user-form-username-widget">
+                            {{ form_widget(form.username)}}
+                        </div>
+                        <div "user-form-label">
+                            {{ form_label(form.password)}}
+                        </div>
+                        <div "user-form-widget">
+                            {{ form_widget(form.password, { attr: {'value': ''}})}}
+                        </div>
+                        <button class="save-button">{{ button_label|default('Modifier') }}</button>
+                    {{ form_end(form) }}
                 </div>
-                <div "user-form-username-widget">
-                    {{ form_widget(form.username)}}
-                </div>
-                <div "user-form-label">
-                    {{ form_label(form.password)}}
-                </div>
-                <div "user-form-widget">
-                    {{ form_widget(form.password, { attr: {'value': ''}})}}
-                </div>
-                <button class="save-button">{{ button_label|default('Modifier') }}</button>
-            {{ form_end(form) }}
-        </div>
 
-    {{ include('user/_delete_form.html.twig') }}
+            {{ include('user/_delete_form.html.twig') }}
+        {% else %}
+        <h2 class="edit-user-title">Vous n'avez pas les autorisations</h2>
+        {% endif %}
+    {% else %}
+        <h2 class="edit-user-title">Vous n'avez pas les autorisations</h2>
+    {% endif %}
 </div>
 {% endblock %}

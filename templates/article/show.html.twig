@@ -14,6 +14,7 @@
                     {% endfor %}
                 </ul>
             <p class="articles-article-date" >{{ article.date|date('d/m/Y')}}</p>
+            <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_edit', {'id': article.id}) }}';">Modifier</button>
         </div>
     </div>
 {% endblock %}

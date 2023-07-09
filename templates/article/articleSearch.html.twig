@@ -1,13 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
-
-{% block body %}
+{% block body %}    
     <div class="main">
-        <div class="user-profile">
-            <h2 class="username">{{ user.username }}</h2>
+        {{ form_start(form)}}
+            <div "article-form-title-label form-label">
+                {{ form_label(form.q)}}
+            </div>
+            <div "article-form-title-widget">
+                {{ form_widget(form.q)}}
+            </div>
+            <button class="submit-button" type="submit">Rechercher</button>
+        {{ form_end(form)}}
+        
 
-            <div class="articles-articles">
+        {% if articles != null %}
             {% for article in articles %}
                 <div class="articles-article">
                     <h3 class="articles-article-title">{{ article.title }}</h3>
@@ -21,13 +27,8 @@
                     <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_show', {'id': article.id}) }}';">Voir l'article</button>
                 </div>
             {% endfor %}
-            </div>
-
-            {% if app.user %}
-                {% if app.user.id == user.id %}
-                    <button type="button" class="edit-redirect-button" onclick="window.location.href='{{ path('app_user_edit', {'id': user.id}) }}'">Modifier</a>
-                {% endif %}
-            {% endif %}
-        </div>
+        {% endif %}
     </div>
+    
 {% endblock %}
+

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,16 +23,30 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/new', name: 'app_article_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ArticleRepository $articleRepository): Response
+    public function new(Request $request, ArticleRepository $articleRepository, UserRepository $userRepository): Response
     {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
+        $data = json_decode($request->getContent(), true);
         $form->handleRequest($request);
 
         $article->setDate(new \DateTime);
 
+        $user = null;
+
+        if ($data != null) {
+            $userId = $data['user'];
+    
+            $user = $userRepository->find($userId);
+
+        }
+
+        
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
+            $article->setUser($user);
+
             $articleRepository->save($article, true);
 
             return $this->redirectToRoute('app_article_index', [], Response::HTTP_SEE_OTHER);
@@ -56,6 +71,8 @@ class ArticleController extends AbstractController
     {
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
+
+        $article->setDate(new \DateTime);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $articleRepository->save($article, true);
