@@ -18,7 +18,7 @@ class ArticleController extends AbstractController
     public function index(ArticleRepository $articleRepository): Response
     {
         return $this->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'articles' => $articleRepository->findByDate(),
         ]);
     }
 
@@ -27,25 +27,15 @@ class ArticleController extends AbstractController
     {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
-        $data = json_decode($request->getContent(), true);
         $form->handleRequest($request);
 
+        $user = $this->getUser();
+
         $article->setDate(new \DateTime);
+        $article->setUser($user);
 
-        $user = null;
-
-        if ($data != null) {
-            $userId = $data['user'];
     
-            $user = $userRepository->find($userId);
-
-        }
-
-        
-
         if ($form->isSubmitted() && $form->isValid()) {
-            
-            $article->setUser($user);
 
             $articleRepository->save($article, true);
 

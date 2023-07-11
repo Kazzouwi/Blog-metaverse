@@ -5,6 +5,26 @@
 
 .article-article {
     background: rgba(0, 0, 0, 0.05);
-    border-top: solid 2px #2c0047;
-    padding: 10px;
+    border-top: solid 0.5vw #2c0047;
+    padding: 1vw;
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-link {
+    font-size: 1.5rem;
+}
+
+.author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.author a {
+    margin-left: 0.4vw;
 }

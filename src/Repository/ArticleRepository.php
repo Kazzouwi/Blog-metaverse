@@ -57,6 +57,30 @@ class ArticleRepository extends ServiceEntityRepository
         return $articles;
     }
 
+    public function findByDate()
+    {
+        $articles = $this->createQueryBuilder('a')
+            ->select('a')
+            ->addOrderBy('a.date', 'DESC')
+            ->getQuery()
+            ->getResult();
+        
+        return $articles;
+    }
+
+    public function findByUser($id)
+    {
+        $articles = $this->createQueryBuilder('a')
+            ->select('a')
+            ->where('a.user_id LIKE :id')
+            ->addOrderBy('a.date', 'DESC')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
+        
+        return $articles;
+    }
+
 //    /**
 //     * @return Article[] Returns an array of Article objects
 //     */

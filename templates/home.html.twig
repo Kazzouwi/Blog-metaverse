@@ -16,7 +16,15 @@
                         <li><a href="{{ path('app_category_articleByCategory', {'id': category.id}) }}">{{ category.name }}</a></li>
                     {% endfor %}
                 </ul>
-                <p class="articles-article-date" >{{ article.date|date('d/m/Y')}}</p>
+                <div class="article-footer">
+                    <p class="articles-article-date" >{{ article.date|date('d/m/Y')}}</p>
+                    {% if article.user != null %}
+                    <div class="author">
+                        <p>Auteur : </p>
+                        <a href='{{path('app_user_show', {'id': article.user.id }) }}' class="profile-link"> {{ article.user.username }} </a>
+                    </div>
+                    {% endif %}
+                </div>
                 <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_show', {'id': article.id}) }}';">Voir l'article</button>
             </div>
         {% endfor %}
