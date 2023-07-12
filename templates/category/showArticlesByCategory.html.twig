@@ -2,7 +2,8 @@
 
 {% block body %}
     <div class="main">
-        <h2 class="articles-title">Articles :</h1>
+        <h2 class="articles-title">Articles :</h2>
+        <h3 class="articles-title">Catégorie : {{ category.name }}</h3>
 
         <div class="articles-articles">
         {% for article in articles %}

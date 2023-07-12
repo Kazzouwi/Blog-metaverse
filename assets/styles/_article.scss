@@ -1,11 +1,11 @@
 .article-title {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 5vw;
 }
 
 .article-article {
     background: rgba(0, 0, 0, 0.05);
-    border-top: solid 0.5vw #2c0047;
+    border-top: solid 0.15vw #2c0047;
     padding: 1vw;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .profile-link {
-    font-size: 1.5rem;
+    font-size: 1.5vw;
 }
 
 .author {
@@ -27,4 +27,14 @@
 
 .author a {
     margin-left: 0.4vw;
+}
+
+.article-button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-button-div button {
+    margin-right: 2vw;
 }

@@ -1,11 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Category{% endblock %}
-
 {% block body %}
-    <h1>Create new Category</h1>
+    <div class="main">
+    {% if app.user %}
+    
+        <h2 class="article-form-title">Créer une catégorie :</h2>
 
-    {{ include('category/_form.html.twig') }}
-
-    <a href="{{ path('app_category_index') }}">back to list</a>
+        <div class="article-form">
+            {{ form_start(form) }}
+                <div "article-form-title-label form-label">
+                    {{ form_label(form.name)}}
+                </div>
+                <div "article-form-title-widget">
+                    {{ form_widget(form.name)}}
+                </div>
+                <button class="save-button">{{ button_label|default('Sauvegarder') }}</button>
+            {{ form_end(form) }}
+        </div>
+        <div class="back-to-articles">
+            <a href="{{ path('app_category_index') }}">Retour aux catégories</a>
+        </div>
+        {% else %}
+            <h2 class="article-form-title">Vous n'êtes pas connecté(e)</h2>
+        {% endif %}
+    </div>
 {% endblock %}
+

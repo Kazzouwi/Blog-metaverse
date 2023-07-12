@@ -11,6 +11,10 @@
                 <button type="button" class="category-button" onclick="window.location.href='{{ path('app_category_articleByCategory', {'id': category.id}) }}';">{{category.name}}</button>
             </div>
             {% endfor %}
+            
+        </div>
+        <div class="add-button">
+            <button class="category-button-add" onclick="window.location.href='{{ path('app_category_new')}}';">Créer une catégorie</button>
         </div>
     </div>
 {% endblock %}

@@ -23,8 +23,21 @@
                 {% endif %}
             </div>
 
-            {% if app.user == article.user %}
-                <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_edit', {'id': article.id}) }}';">Modifier</button>
+            {% if app.user %}
+            {% set roles = app.user.roles %}
+                {% if 'ROLE_ADMIN' in roles %}
+                <div class="article-button-div">
+                    <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_edit', {'id': article.id}) }}';">Modifier</button>
+                    {{ include('article/_delete_form.html.twig') }}
+                </div>
+                {% else %}
+                    {% if app.user.id == article.user.id %}
+                        <div class="article-button-div">
+                            <button type="button" class="home-article-button" onclick="window.location.href='{{ path('app_article_edit', {'id': article.id}) }}';">Modifier</button>
+                            {{ include('article/_delete_form.html.twig') }}
+                        </div>
+                    {% endif %}
+                {% endif %}
             {% endif %}
         </div>
     </div>

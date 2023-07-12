@@ -85,12 +85,18 @@ class UserController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_user_delete', methods: ['POST'])]
-    public function delete(Request $request, User $user, UserRepository $userRepository): Response
+    public function delete(Request $request, User $user, UserRepository $userRepository, ArticleRepository $articleRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+            $articles = $articleRepository->findBy(['user' => $user->getId()]);
+
+            foreach ($articles as $article) {
+                $articleRepository->remove($article, true);
+            };
+
             $userRepository->remove($user, true);
         }
 
-        return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);
     }
 }
