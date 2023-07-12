@@ -2,15 +2,19 @@
 
 {% block body %}    
     <div class="main">
-        {{ form_start(form)}}
-            <div "article-form-title-label form-label">
-                {{ form_label(form.q)}}
-            </div>
-            <div "article-form-title-widget">
-                {{ form_widget(form.q)}}
-            </div>
-            <button class="submit-button" type="submit">Rechercher</button>
-        {{ form_end(form)}}
+    
+        <div class="search-div">
+            {{ form_start(form)}}
+                <div "article-form-title-label form-label">
+                    {{ form_label(form.q)}}
+                </div>
+                <div "article-form-title-widget">
+                    {{ form_widget(form.q)}}
+                </div>
+                <button class="submit-button" type="submit">Rechercher</button>
+            {{ form_end(form)}}
+        </div>
+        
         
 
         {% if articles != null %}

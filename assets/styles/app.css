@@ -68,13 +68,6 @@ label {
     box-shadow: 0px 0px 6px rgb(73, 73, 73);
 }
 
-.show-profile-button {
-    width: fit-content;
-    position: absolute;
-    left: 12.5%;
-    top: 25%;
-}
-
 .side-nav {
     position: fixed;
     height: 100vh;
