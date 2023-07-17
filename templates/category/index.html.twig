@@ -13,8 +13,10 @@
             {% endfor %}
             
         </div>
+        {% if app.user %}
         <div class="add-button">
             <button class="category-button-add" onclick="window.location.href='{{ path('app_category_new')}}';">Créer une catégorie</button>
         </div>
+        {% endif %}
     </div>
 {% endblock %}

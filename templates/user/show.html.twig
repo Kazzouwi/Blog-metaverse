@@ -33,7 +33,12 @@
 
             {% if app.user %}
                 {% if app.user.id == user.id %}
-                    <button type="button" class="edit-redirect-button" onclick="window.location.href='{{ path('app_user_edit', {'id': user.id}) }}'">Modifier</a>
+                    <button 
+                    type="button" 
+                    class="edit-redirect-button" 
+                    onclick="window.location.href='{{ path('app_user_edit', {'id': user.id}) }}'">
+                        Modifier
+                    </button>
                 {% endif %}
             {% endif %}
         </div>

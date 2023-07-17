@@ -3,37 +3,40 @@
 {% block body %}
     <div class="main">
     {% if app.user %}
-    
-        <h2 class="article-form-title">Modifier l'article :</h2>
+        {% if app.user.id == article.user.id %}
+            <h2 class="article-form-title">Modifier l'article :</h2>
 
-        <div class="article-form">
-            {{ form_start(form) }}
-                <div "article-form-title-label form-label">
-                    {{ form_label(form.title)}}
-                </div>
-                <div "article-form-title-widget">
-                    {{ form_widget(form.title)}}
-                </div>
-                <div "article-form-content-label form-label">
-                    {{ form_label(form.content)}}
-                </div>
-                <div "article-form-content-widget">
-                    {{ form_widget(form.content)}}
-                </div>
-                <div "article-form-category-label form-label">
-                    {{ form_label(form.category)}}
-                </div>
-                <div "article-form-category-widget">
-                    {{ form_widget(form.category)}}
-                </div>
-                <button class="save-button">{{ button_label|default('Sauvegarder') }}</button>
-            {{ form_end(form) }}
-        </div>
-        <div class="back-to-articles">
-            <a href="{{ path('app_article_index') }}">Retour aux articles</a>
-        </div>
+            <div class="article-form">
+                {{ form_start(form) }}
+                    <div "article-form-title-label form-label">
+                        {{ form_label(form.title)}}
+                    </div>
+                    <div "article-form-title-widget">
+                        {{ form_widget(form.title)}}
+                    </div>
+                    <div "article-form-content-label form-label">
+                        {{ form_label(form.content)}}
+                    </div>
+                    <div "article-form-content-widget">
+                        {{ form_widget(form.content)}}
+                    </div>
+                    <div "article-form-category-label form-label">
+                        {{ form_label(form.category)}}
+                    </div>
+                    <div "article-form-category-widget">
+                        {{ form_widget(form.category)}}
+                    </div>
+                    <button class="save-button">{{ button_label|default('Sauvegarder') }}</button>
+                {{ form_end(form) }}
+            </div>
+            <div class="back-to-articles">
+                <a href="{{ path('app_article_index') }}">Retour aux articles</a>
+            </div>
         {% else %}
-            <h2 class="article-form-title">Vous n'êtes pas connecté(e)</h2>
+            <h2 class="edit-user-title">Vous n'avez pas les autorisations</h2>
         {% endif %}
+    {% else %}
+        <h2 class="article-form-title">Vous n'êtes pas connecté(e)</h2>
+    {% endif %}
     </div>
 {% endblock %}

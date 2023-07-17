@@ -23,6 +23,9 @@
                     <div "article-form-content-widget">
                         {{ form_widget(form.password)}}
                     </div>
+                    <div "article-form-content-widget">
+                        {{ form_errors(form.password)}}
+                    </div>
                     <button class="save-button">{{ button_label|default('Sauvegarder') }}</button>
                 {{ form_end(form) }}
             </div>
