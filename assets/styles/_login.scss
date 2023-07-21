@@ -6,3 +6,10 @@
     width: 10vw;
     height: 1.5vw;
 }
+
+@media screen and (max-width: 1026px) {
+    #inputUsername, #inputPassword {
+        width: 14vw;
+        height: 3vw;
+    }
+}

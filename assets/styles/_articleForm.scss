@@ -63,3 +63,10 @@ input[type="checkbox"]:checked {
     bottom: 0.4vw;
 }
 
+@media screen and (max-width: 1026px) {
+    #article_content {
+        height: 20vw;
+        width: 30vw;
+    }
+}
+
