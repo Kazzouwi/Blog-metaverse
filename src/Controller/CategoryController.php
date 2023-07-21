@@ -70,7 +70,9 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/{id}/articles', name: 'app_category_articleByCategory')]
-    public function searchByCategory(ArticleRepository $articleRepository, CategoryRepository $categoryRepository, $id)
+    public function searchByCategory(
+        ArticleRepository $articleRepository, 
+        CategoryRepository $categoryRepository, $id)
     {
         $articles = $articleRepository->findAll();
         $category = $categoryRepository->find($id);

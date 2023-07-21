@@ -88,19 +88,59 @@ label {
     justify-content: center;
     cursor: pointer;
     border-bottom: 1px solid #5b0094;
+    align-items: center;
 }
 
 .nav-bloc:hover {
     background: #5b0094;
 }
 
-.nav-bloc svg {
-    width: 10vw;
+.nav-bloc a svg {
+    height: 2vw;
 }
 
 @media screen and (max-width: 1026px) {
     .main {
         width: 75%;
+    }
+
+    p, button, label, a, li {
+        font-size: 1.2vw;
+    }
+    
+    h2, h3, h4 {
+        letter-spacing: 0.06vw;
+    }
+    
+    h2 {
+        font-size: 2.7vw;
+    }
+    
+    h3 {
+        font-size: 1.7vw;
+    }
+    
+    .home-article-button, 
+    .post-button, 
+    .save-button, 
+    .submit-button, 
+    .sign-in-redirect-button, 
+    .show-profile-button, 
+    .edit-redirect-button,
+    .delete-button {
+        height: 1.7vw;
+    }
+
+    .side-nav {
+        width: 6vw;
+    }
+
+    .nav-bloc {
+        height: 4vw;
+    }
+
+    .nav-bloc a svg {
+        height: 3vw;
     }
 }
 
